@@ -1,0 +1,113 @@
+
+:root {
+    --color-fondo: #fcf6f8;
+    --color-blanco: #fff;
+    --color-primario: #ff8fa3;
+    --color-secundario: #ff758f;
+    --color-texto-principal: #212529;
+    --color-texto-secundario: #6c757d;
+    --color-borde: #fcebeb;
+    --sombra-suave: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --fuente-principal: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto-principal);
+    font-family: var(--fuente-principal);
+    margin: 0;
+}
+
+
+.contenedor-principal {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.contenido-principal {
+    flex-grow: 1;
+    padding: 2.5rem;
+    overflow-y: auto;
+}
+
+
+.barra-lateral {
+    width: 260px;
+    background: var(--color-blanco);
+    box-shadow: var(--sombra-suave);
+    flex-shrink: 0;
+    flex-direction: column; 
+    border-right: 1px solid var(--color-borde);
+    height: 100vh;
+    position: sticky;
+    top: 0;
+}
+
+
+.barra-lateral-encabezado { 
+    padding: 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid var(--color-borde); 
+}
+
+.barra-lateral-encabezado h3 { 
+    font-weight: 700; 
+    font-size: 1.75rem; 
+    margin: 0; color: var(--color-texto-principal); 
+}
+
+.barra-lateral-encabezado h3 i { 
+    color: var(--color-primario);
+    margin-right: 0.5rem; 
+}
+
+.barra-lateral-menu { 
+    list-style: none; 
+    padding: 1rem 0; 
+}
+
+.barra-lateral-menu li a { 
+    padding: 0.9rem 1.5rem; 
+    display: flex; 
+    align-items: center; 
+    color: var(--color-texto-secundario); 
+    text-decoration: none; 
+    font-weight: 500; 
+    border-left: 4px solid transparent; 
+    transition: all 0.2s ease-in-out; 
+}
+
+.barra-lateral-menu li a:hover { 
+    background-color: var(--color-borde); 
+    color: var(--color-secundario); 
+    border-left-color: var(--color-secundario); 
+}
+
+.barra-lateral-menu li a.active { 
+    background-color: var(--color-secundario); 
+    color: #fff; 
+    border-left-color: var(--color-primario); 
+}
+
+.barra-lateral-menu li a i { 
+    margin-right: 1rem; 
+    font-size: 1.2rem; 
+    width: 20px; 
+}
+
+.barra-lateral-divisor { 
+    margin: 1rem 1.5rem; 
+    border-top: 1px solid var(--color-borde); 
+}
+
+
+@media (max-width: 991.98px) {
+    body {
+        padding-top: 56px; 
+    }
+    .contenido-principal {
+        padding: 1.5rem;
+    }
+
+}
