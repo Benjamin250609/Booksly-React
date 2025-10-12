@@ -1,0 +1,198 @@
+.container {
+    max-width: 800px;
+    margin: auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--sombra-suave);
+}
+
+.encabezado-libro {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.portada-libro {
+    width: 180px;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    flex-shrink: 0;
+}
+
+.info-libro {
+    flex-grow: 1;
+}
+
+.info-libro h1 {
+    margin: 0 0 5px 0;
+    font-size: 2rem;
+    color: var(--color-texto-principal);
+}
+
+.info-libro .autor {
+    font-size: 1.2rem;
+    color: var(--color-texto-secundario);
+    margin-bottom: 20px;
+}
+
+.seccion-progreso {
+    margin-top: 20px;
+}
+
+.etiqueta-progreso {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--color-texto-principal);
+}
+
+.contenedor-barra-progreso {
+    width: 100%;
+    background-color: #e9ecef;
+    border-radius: 50px;
+    height: 12px;
+}
+
+#relleno-barra-progreso {
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-secundario), var(--color-primario));
+    border-radius: 50px;
+}
+
+.estadisticas {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.elemento-estadistica {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid var(--color-borde);
+}
+
+.elemento-estadistica i {
+    font-size: 1.5rem;
+    color: var(--color-secundario);
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.elemento-estadistica .etiqueta {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--color-texto-secundario);
+}
+
+.elemento-estadistica .valor {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--color-texto-principal);
+}
+
+.enlace-volver {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: var(--color-primario);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.enlace-volver:hover {
+    text-decoration: underline;
+}
+
+
+.tarjeta-sesion-lectura {
+    background-color: var(--color-fondo);
+    border: 1px solid var(--color-borde);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.tarjeta-sesion-lectura h3 {
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.contenedor-cronometro {
+    margin-bottom: 1.5rem;
+}
+
+.contenedor-cronometro .temporizador {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--color-primario);
+    margin-bottom: 0.5rem;
+}
+
+.btn-temporizador {
+    background-color: var(--color-secundario);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-temporizador:hover {
+    background-color: #e06c80;
+}
+
+.contenedor-actualizar-progreso {
+    max-width: 300px;
+    margin: 0 auto 1.5rem auto;
+}
+
+.contenedor-actualizar-progreso label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.input-group {
+    display: flex;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #dee2e6;
+    border-radius: 8px 0 0 8px;
+    box-sizing: border-box;
+}
+
+.input-group .btn-actualizar {
+    background-color: var(--color-texto-secundario);
+    color: white;
+    border: none;
+    padding: 0.75rem 1rem;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+}
+
+.btn-finalizar {
+    width: 100%;
+    background-color: #28a745;
+    color: white;
+    font-weight: 500;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+
+

@@ -1,0 +1,88 @@
+.publicacion-feed {
+    background-color: var(--color-blanco);
+    border: 1px solid var(--color-borde);
+    border-radius: 12px;
+    box-shadow: var(--sombra-suave); 
+}
+
+.encabezado-publicacion { 
+    display: flex;
+    align-items: center; 
+    padding: 1rem 1.25rem;
+    gap: 0.75rem; 
+}
+
+.avatar-publicacion { 
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover; 
+}
+
+.info-usuario-publicacion a { 
+    color: var(--color-texto-principal);
+    text-decoration: none; 
+}
+
+.info-usuario-publicacion a:hover {
+    text-decoration: underline; 
+}
+
+.contenido-publicacion {
+    padding: 0 1.25rem 1rem; 
+}
+
+.info-libro-publicacion { 
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: var(--color-fondo);
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    padding: 1rem; 
+}
+
+.portada-libro-pequena { 
+    width: 60px;
+    height: auto;
+    border-radius: 4px;
+    flex-shrink: 0; 
+}
+
+.acciones-publicacion { 
+    display: flex;
+    gap: 1.5rem; 
+    padding: 0.75rem 1.25rem;
+    border-top: 1px solid var(--color-borde); 
+}
+
+.acciones-publicacion a { 
+    color: var(--color-texto-secundario);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease; 
+}
+
+.acciones-publicacion a:hover { 
+    color: var(--color-primario); 
+}
+
+.acciones-publicacion a i { 
+    margin-right: 0.5rem; 
+}
+
+.boton-like .bi-heart-fill { 
+    display: none; 
+}
+
+.boton-like.liked { 
+    color: var(--color-primario);
+    font-weight: bold; 
+}
+
+.boton-like.liked .bi-heart { 
+    display: none; 
+}
+.boton-like.liked .bi-heart-fill { 
+    display: inline-block; 
+}

@@ -1,0 +1,76 @@
+.tarjeta-estadistica {
+    background-color: var(--color-blanco);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: var(--sombra-suave);
+    text-align: center;
+}
+
+.tarjeta-estadistica .icono-estadistica {
+    font-size: 2rem;
+    color: var(--color-primario);
+    margin-bottom: 0.5rem;
+}
+
+.tarjeta-estadistica .valor-estadistica {
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+
+.tarjeta-estadistica .etiqueta-estadistica {
+    color: var(--color-texto-secundario);
+}
+
+.contenedor-grafico {
+    background-color: var(--color-blanco);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: var(--sombra-suave);
+    position: relative;
+    height: 400px;
+    width: 100%;
+}
+
+.tarjeta-progreso-libro {
+    display: flex;
+    gap: 1.5rem;
+    background-color: var(--color-blanco);
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: var(--sombra-suave);
+    align-items: center;
+}
+
+.tarjeta-progreso-libro img {
+    width: 80px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.info-progreso-libro {
+    flex-grow: 1;
+}
+
+.info-progreso-libro h5 {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.info-progreso-libro .author {
+    color: var(--color-texto-secundario);
+    margin-bottom: 1rem;
+}
+
+.progress-bar {
+    background-color: var(--color-secundario);
+}
+
+.detalles-progreso {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: var(--color-texto-secundario);
+    margin-top: 0.25rem;
+}
