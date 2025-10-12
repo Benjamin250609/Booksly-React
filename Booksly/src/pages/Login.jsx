@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import logo from '../assets/logo.png'
-import { login } from '../services/ApiService';
+import { login as apiLogin } from '../services/ApiService';
 import { useAuth } from '../context/AuthContext';
+
+
 
 function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
+    const { login } = useAuth();
 
-   
     const { setUser } = useAuth();
 
     const handleSubmit = async (event) => {
@@ -18,10 +20,10 @@ function Login() {
         setError('');
 
         try {
-            const userData = await login(email, password);
+            const userData = await apiLogin(email, password);
 
             if (userData) {
-                setUser(userData);
+                login(userData); 
                 navigate('/app/inicio');
             } else {
                 setError('Correo electrónico o contraseña incorrectos.');
@@ -36,7 +38,6 @@ function Login() {
             <div className="contenedor-formulario">
                 <div className="row">
                     <div className="col-4 columna-imagen">
-                        {/* 5. CORRECCIÓN: La variable 'logo' ahora está definida */}
                         <img src={logo} alt="Ilustración de un libro" />
                     </div>
                     <div className="col-8 columna-datos">
@@ -66,9 +67,9 @@ function Login() {
                                     required
                                 />
                             </div>
-                            
+
                             {error && <div className="alert alert-danger">{error}</div>}
-                            
+
                             <button type="submit" className="btn btn-primary boton-formulario">
                                 Iniciar Sesión
                             </button>

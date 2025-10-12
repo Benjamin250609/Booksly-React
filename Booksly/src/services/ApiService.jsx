@@ -1,4 +1,5 @@
 const API_BASE_URL = 'http://demo0319497.mockable.io/';
+const GOOGLE_BOOKS_BASE_URL = 'https://www.googleapis.com/books/v1/volumes';
 
 export async function fetchData(url) {
     try {
@@ -31,18 +32,15 @@ export async function login(email, password) {
 }
 
 
-
-
-
 export async function getPosts() {
     return fetchData(`${API_BASE_URL}/posts`);
 }
 
 export async function getLibrosUsuario(userId) {
-    return fetchData(`${API_BASE_URL}/usuarios/${userId}/libros`);
+    return fetchData(`${API_BASE_URL}/users/${userId}/books`);
 }
 
-export async function searchGoogleBooks(query) {
-    const url = `${GOOGLE_BOOKS_BASE_URL}?q=${encodeURIComponent(query)}`;
+export async function searchGoogleBooks(query, maxResults = 12) {
+    const url = `${GOOGLE_BOOKS_BASE_URL}?q=${encodeURIComponent(query)}&maxResults=${maxResults}`;
     return fetchData(url);
 }

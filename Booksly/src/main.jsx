@@ -14,9 +14,14 @@ import Login from './pages/Login';
 import Registro from './pages/Registro';
 import Feed from './pages/Feed';
 import Principal from './pages/Principal';
+import LibroDetalle from './pages/LibroDetalle';
+import Buscar from './pages/Buscar';
 
 import './styles/Registro-login.css'
 import './styles/Estilos-comunes.css'
+import Estadisticas from './pages/Estadisticas';
+
+
 
 
 
@@ -45,6 +50,18 @@ const router = createBrowserRouter([
       {
         path: 'feed',
         element: <Feed />
+      },
+      {
+        path: 'libro/:id',
+        element : <LibroDetalle/>
+      },
+      {
+        path: 'buscar',
+        element : <Buscar />
+      },
+      {
+        path: 'estadisticas',
+        element : <Estadisticas />
       }
     ]
   },

@@ -2,6 +2,9 @@ import { Link } from 'react-router-dom';
 import react from '../assets/react.svg';
 import Navbar_Superior from '../components/Navbar';
 
+
+
+
 function Registro() {
     return (
 
