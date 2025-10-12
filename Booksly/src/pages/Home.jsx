@@ -11,10 +11,8 @@ function Home() {
             <Navbar_Superior />
             <main>
                 <section className="seccion-presentacion text-center">
-                    {/* 2. Reemplazamos los divs con los componentes de react-bootstrap */}
                     <Container>
                         <Row className="align-items-center">
-                            {/* Las clases 'col-md-6' se convierten en props: md={6} */}
                             <Col md={6} className="text-md-start">
                                 <h1 className="display-1">Tu universo literario, en un solo lugar.</h1>
                                 <p className="lead my-4">Organiza tus lecturas, registra tu progreso y conecta con una comunidad de amantes de los libros.</p>

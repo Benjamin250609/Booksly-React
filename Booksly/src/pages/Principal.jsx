@@ -1,6 +1,11 @@
+
+
+import "../styles/Principal.css"
+
 function Principal() {
     return (
         <>
+            
             <div className="fila-superior">
                 <div className="tarjeta-bienvenida">
                     <h1 id="mensaje-bienvenida">¡Bienvenido de vuelta!</h1>

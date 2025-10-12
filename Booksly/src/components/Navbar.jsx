@@ -8,8 +8,8 @@ function Navbar_Superior() {
             <Container>
                 <Navbar.Brand as={Link} to="/">Booksy</Navbar.Brand>
                 <div className="ms-auto d-flex gap-2">
-                    <Button as={Link} to="/login" variant="primary">Registrarse</Button>
-                    <Button as={Link} to="/registro" variant="primary" >Iniciar Sesión</Button>
+                    <Button as={Link} to="/registro" variant="primary">Registrarse</Button>
+                    <Button as={Link} to="/login" variant="primary" >Iniciar Sesión</Button>
                 </div>
             </Container>
         </Navbar>
@@ -17,3 +17,4 @@ function Navbar_Superior() {
 }
 
 export default Navbar_Superior;
+
