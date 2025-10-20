@@ -1,3 +1,4 @@
+
 .fila-superior {
     display: grid;
     grid-template-columns: 1fr 300px; 
@@ -106,105 +107,6 @@
 }
 
 
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1050;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    justify-content: center;
-    align-items: center;
-}
-
-.contenido-modal {
-    background-color: #fff;
-    padding: 35px;
-    border-radius: 16px;
-    width: 90%;
-    max-width: 550px;
-    position: relative;
-    max-height: 90vh;
-    overflow-y: auto;
-}
-
-.boton-cerrar {
-    color: #aaa;
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.grupo-formulario {
-    margin-bottom: 20px;
-}
-
-.grupo-formulario label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-    color: var(--color-texto-secundario);
-}
-
-.grupo-formulario input[type="text"],
-.grupo-formulario input[type="number"] {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #dee2e6;
-    border-radius: 8px;
-    box-sizing: border-box;
-}
-
-.envoltura-subida-archivo {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 10px;
-    border: 1px solid #dee2e6;
-    border-radius: 8px;
-}
-
-#vista-previa-portada {
-    width: 60px;
-    height: 90px;
-    border-radius: 4px;
-    object-fit: cover;
-}
-
-.info-subida-archivo button {
-    padding: 8px 16px;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-#nombre-archivo {
-    font-size: 0.9rem;
-    color: var(--color-texto-secundario);
-}
-
-.acciones-formulario {
-    text-align: right;
-    margin-top: 30px;
-}
-
-.acciones-formulario .btn {
-    padding: 12px 24px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-.btn-secondary {
-    background-color: #e9ecef;
-    color: var(--color-texto-secundario);
-    margin-right: 10px;
-
-}
 .modal-backdrop {
     position: fixed;
     top: 0;
@@ -302,3 +204,23 @@
     border: none;
 }
 
+
+/* ======================================= */
+/* === SECCIÓN RESPONSIVA (LA SOLUCIÓN) === */
+/* ======================================= */
+
+/* Se aplica a pantallas más pequeñas que 992px (tablets y móviles) */
+@media (max-width: 991.98px) { 
+    
+    /* 1. Arregla la tarjeta de bienvenida */
+    .fila-superior {
+        grid-template-columns: 1fr; /* Apila las columnas */
+    }
+
+    /* 2. Arregla la sección "Mi Estantería" */
+    .seccion-mis-libros {
+        flex-direction: column;   /* Apila el título y el botón */
+        align-items: flex-start;  /* Los alinea a la izquierda */
+        gap: 1rem;                /* Añade espacio entre ellos */
+    }
+}
