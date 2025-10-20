@@ -44,3 +44,8 @@ export async function searchGoogleBooks(query, maxResults = 12) {
     const url = `${GOOGLE_BOOKS_BASE_URL}?q=${encodeURIComponent(query)}&maxResults=${maxResults}`;
     return fetchData(url);
 }
+
+export async function getEventosCalendario() {
+    
+    return fetchData(`${API_BASE_URL}/calendario`); 
+}

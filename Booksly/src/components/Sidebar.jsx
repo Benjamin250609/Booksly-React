@@ -1,9 +1,12 @@
 
 import { Outlet, Link } from 'react-router-dom';
+import MobileNavbar from './MobileNavbar';
 
 function AppLayout() {
   return (
     <div className="contenedor-principal">
+
+
       <nav id="barra-lateral" className="barra-lateral d-none d-lg-flex">
         <div className="barra-lateral-encabezado">
           <h3><i className="bi bi-book-half"></i> Booksy</h3>
@@ -46,7 +49,9 @@ function AppLayout() {
       <main className="contenido-principal">
         <Outlet />
       </main>
-      
+
+      <MobileNavbar />
+
     </div>
   );
 }

@@ -1,0 +1,81 @@
+.contenedor-calendario {
+    background-color: var(--color-blanco);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--sombra-suave);
+}
+
+.encabezado-calendario {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+#mes-ano {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.cuadricula-calendario {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.dia-semana, .calendar-day {
+    text-align: center;
+    padding: 0.75rem 0.25rem;
+    font-weight: 500;
+}
+
+.dia-semana {
+    color: var(--color-texto-secundario);
+    font-size: 0.9rem;
+}
+
+.calendar-day {
+    border: 1px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.calendar-day:hover {
+    background-color: var(--color-borde);
+}
+
+.calendar-day.other-month {
+    color: #ccc;
+}
+
+.calendar-day.today {
+    background-color: var(--color-secundario);
+    color: white;
+    font-weight: bold;
+}
+
+.calendar-day.selected {
+    border-color: var(--color-primario);
+    background-color: var(--color-borde);
+}
+
+.calendar-day .event-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--color-primario);
+    margin: 4px auto 0;
+}
+
+#lista-eventos h3 {
+    border-bottom: 2px solid var(--color-borde);
+    padding-bottom: 0.5rem;
+}
+
+.event-item {
+    background-color: var(--color-fondo);
+    border-left: 4px solid var(--color-primario);
+    padding: 0.75rem 1rem;
+    border-radius: 5px;
+}

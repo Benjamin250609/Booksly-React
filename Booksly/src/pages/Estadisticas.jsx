@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext.jsx';
 import { getLibrosUsuario } from '../services/ApiService.jsx';
+import { useNavigate } from 'react-router-dom';
 import TarjetaEstadistica from '../components/TarjetaEstadistica.jsx';
 import ListaLibrosProgreso from '../components/ListaLibrosProgreso.jsx';
 import '../styles/Estadisticas.css';
 
 function Estadisticas() {
-    const { user } = useAuth();
+    const { user, logout } = useAuth(); 
+    const navigate = useNavigate();
     const [libros, setLibros] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -42,6 +44,11 @@ function Estadisticas() {
         }
     }, [user]);
 
+    const handleLogout = () => {
+        logout();
+        navigate('/');
+    }
+
     
     const librosFinalizados = libros.filter(l => l.status === 'finalizado');
     const librosEnCurso = libros.filter(l => l.status === 'leyendo');
@@ -59,7 +66,6 @@ function Estadisticas() {
     return (
         <div className="container-fluid">
             <h1 className="mb-4">Mi Progreso de Lectura</h1>
-            
             <div className="row g-4 mb-5">
                 <TarjetaEstadistica
                     icono="bi-book-fill"
@@ -81,6 +87,16 @@ function Estadisticas() {
             <ListaLibrosProgreso titulo="Libros en Curso" libros={librosEnCurso} />
             <hr className="my-5" />
             <ListaLibrosProgreso titulo="Libros Finalizados" libros={librosFinalizados} />
+
+            <div className="mt-5 d-lg-none text-center">
+                <button 
+                    className="btn btn-outline-danger" 
+                    onClick={handleLogout}
+                >
+                    <i className="bi bi-box-arrow-left me-2"></i>
+                    Cerrar Sesión
+                </button>
+            </div>
         </div>
     );
 }

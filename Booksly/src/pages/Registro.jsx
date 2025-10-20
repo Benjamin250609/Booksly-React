@@ -3,7 +3,7 @@ import react from '../assets/react.svg';
 import Navbar_Superior from '../components/Navbar';
 
 
-
+import '../styles/Registro-login.css'
 
 function Registro() {
     return (
@@ -11,7 +11,7 @@ function Registro() {
         <>
             <Navbar_Superior />
 
-            <main className="contenido-principal">
+            <main className="layout-formulario-centrado">
                 <div className="contenedor-formulario">
                     <div className="row">
                         <div className="col-4 columna-imagen">

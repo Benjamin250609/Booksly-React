@@ -5,6 +5,8 @@ import Navbar_Superior from "../components/Navbar";
 
 import { Container, Row, Col, Button } from 'react-bootstrap';
 
+import '../styles/Registro-login.css'
+
 function Home() {
     return (
         <>

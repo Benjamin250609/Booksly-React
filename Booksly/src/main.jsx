@@ -6,6 +6,7 @@ import { AuthProvider } from './context/AuthContext';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 
 import AppLayout from './components/Sidebar';
@@ -16,10 +17,13 @@ import Feed from './pages/Feed';
 import Principal from './pages/Principal';
 import LibroDetalle from './pages/LibroDetalle';
 import Buscar from './pages/Buscar';
-
-import './styles/Registro-login.css'
-import './styles/Estilos-comunes.css'
 import Estadisticas from './pages/Estadisticas';
+import Calendario from './pages/Calendario'; 
+
+
+import './styles/Estilos-comunes.css'
+import './styles/MobileNavbar.css';
+
 
 
 
@@ -62,6 +66,10 @@ const router = createBrowserRouter([
       {
         path: 'estadisticas',
         element : <Estadisticas />
+      },
+      {
+        path: 'calendario',
+        element : <Calendario />
       }
     ]
   },

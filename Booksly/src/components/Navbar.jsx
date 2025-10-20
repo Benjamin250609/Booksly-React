@@ -5,7 +5,7 @@ import { Navbar, Container, Button } from 'react-bootstrap'
 function Navbar_Superior() {
     return (
         <Navbar expand='lg' className="barra-navegacion-personalizada">
-            <Container>
+            <Container fluid>
                 <Navbar.Brand as={Link} to="/">Booksy</Navbar.Brand>
                 <div className="ms-auto d-flex gap-2">
                     <Button as={Link} to="/registro" variant="primary">Registrarse</Button>

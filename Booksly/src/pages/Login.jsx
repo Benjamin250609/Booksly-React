@@ -3,8 +3,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import logo from '../assets/logo.png'
 import { login as apiLogin } from '../services/ApiService';
 import { useAuth } from '../context/AuthContext';
+import Navbar_Superior from '../components/Navbar';
 
-
+import '../styles/Registro-login.css'
 
 function Login() {
     const [email, setEmail] = useState('');
@@ -23,7 +24,7 @@ function Login() {
             const userData = await apiLogin(email, password);
 
             if (userData) {
-                login(userData); 
+                login(userData);
                 navigate('/app/inicio');
             } else {
                 setError('Correo electrónico o contraseña incorrectos.');
@@ -34,52 +35,56 @@ function Login() {
     };
 
     return (
-        <main className="contenido-principal">
-            <div className="contenedor-formulario">
-                <div className="row">
-                    <div className="col-4 columna-imagen">
-                        <img src={logo} alt="Ilustración de un libro" />
-                    </div>
-                    <div className="col-8 columna-datos">
-                        <h1>Bienvenido de vuelta</h1>
-                        <form id="formulario-login" onSubmit={handleSubmit}>
-                            <div className="grupo-formulario">
-                                <label htmlFor="correo-usuario">Correo Electrónico</label>
-                                <input
-                                    type="email"
-                                    id="correo-usuario"
-                                    className="form-control"
-                                    placeholder="Ingrese su correo"
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                    required
-                                />
-                            </div>
-                            <div className="grupo-formulario">
-                                <label htmlFor="contrasena-usuario">Contraseña</label>
-                                <input
-                                    type="password"
-                                    id="contrasena-usuario"
-                                    className="form-control"
-                                    placeholder="Ingrese su contraseña"
-                                    value={password}
-                                    onChange={(e) => setPassword(e.target.value)}
-                                    required
-                                />
-                            </div>
 
-                            {error && <div className="alert alert-danger">{error}</div>}
+        <>
+           <Navbar_Superior />
+            <main className="layout-formulario-centrado">
+                <div className="contenedor-formulario">
+                    <div className="row">
+                        <div className="col-4 columna-imagen">
+                            <img src={logo} alt="Ilustración de un libro" />
+                        </div>
+                        <div className="col-8 columna-datos">
+                            <h1>Bienvenido de vuelta</h1>
+                            <form id="formulario-login" onSubmit={handleSubmit}>
+                                <div className="grupo-formulario">
+                                    <label htmlFor="correo-usuario">Correo Electrónico</label>
+                                    <input
+                                        type="email"
+                                        id="correo-usuario"
+                                        className="form-control"
+                                        placeholder="Ingrese su correo"
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                        required
+                                    />
+                                </div>
+                                <div className="grupo-formulario">
+                                    <label htmlFor="contrasena-usuario">Contraseña</label>
+                                    <input
+                                        type="password"
+                                        id="contrasena-usuario"
+                                        className="form-control"
+                                        placeholder="Ingrese su contraseña"
+                                        value={password}
+                                        onChange={(e) => setPassword(e.target.value)}
+                                        required
+                                    />
+                                </div>
 
-                            <button type="submit" className="btn btn-primary boton-formulario">
-                                Iniciar Sesión
-                            </button>
+                                {error && <div className="alert alert-danger">{error}</div>}
 
-                            <p className="mt-3">¿No tienes cuenta? <Link to="/registro">Crea una aquí</Link></p>
-                        </form>
+                                <button type="submit" className="btn btn-primary boton-formulario">
+                                    Iniciar Sesión
+                                </button>
+
+                                <p className="mt-3">¿No tienes cuenta? <Link to="/registro">Crea una aquí</Link></p>
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </main>
+            </main>
+        </>
     );
 }
 
