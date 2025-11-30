@@ -1,0 +1,294 @@
+/* --- Contenedor Principal --- */
+.libro-detalle-container {
+    padding: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #fff;
+    min-height: 100vh;
+}
+
+/* --- Enlace de Volver --- */
+.enlace-volver {
+    display: inline-flex;
+    align-items: center;
+    color: #ff758f; /* Tu color principal */
+    text-decoration: none;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    transition: color 0.2s ease;
+}
+
+.enlace-volver i {
+    margin-right: 8px;
+    font-size: 1.1rem;
+}
+
+.enlace-volver:hover {
+    color: #ff4d6d; /* Un tono más oscuro al pasar el mouse */
+    text-decoration: underline;
+}
+
+/* --- Encabezado (Portada + Título) --- */
+.encabezado-libro {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    align-items: flex-start;
+}
+
+.portada-libro {
+    width: 160px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15); /* Sombra elegante */
+    transition: transform 0.3s ease;
+}
+
+.portada-libro:hover {
+    transform: translateY(-5px); /* Efecto de levitación suave */
+}
+
+.info-libro {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info-libro h1 {
+    font-size: 2.5rem;
+    color: #212529;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.info-libro .autor {
+    font-size: 1.2rem;
+    color: #6c757d;
+    margin-bottom: 2rem;
+}
+
+/* --- Barra de Progreso (CORREGIDA Y MEJORADA) --- */
+.seccion-progreso {
+    width: 100%;
+    margin-top: auto; /* Empuja la barra hacia abajo si hay espacio */
+}
+
+.etiqueta-progreso {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 8px;
+}
+
+.contenedor-barra-progreso {
+    width: 100%;
+    height: 12px;
+    background-color: #e9ecef; /* Gris claro de fondo */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.relleno-barra-progreso {
+    height: 100%;
+    background-color: #ff758f; /* Tu color rosado */
+    background-image: linear-gradient(90deg, #ff758f, #ff4d6d); /* Degradado sutil */
+    border-radius: 10px;
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1); /* Animación suave */
+}
+
+/* --- Sección de Estadísticas (Tarjetas Pequeñas) --- */
+.estadisticas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.elemento-estadistica {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef; /* Borde sutil */
+    padding: 1.5rem;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.elemento-estadistica:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-color: #ffccd5; /* Borde rosado claro al hover */
+}
+
+.elemento-estadistica .etiqueta {
+    font-size: 0.9rem;
+    color: #868e96;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.elemento-estadistica .etiqueta i {
+    color: #ff758f; /* Iconos en rosado */
+    font-size: 1.1rem;
+}
+
+.elemento-estadistica .valor {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #343a40;
+}
+
+/* --- Tarjeta de Sesión de Lectura (Cronómetro) --- */
+.tarjeta-sesion-lectura {
+    background-color: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    text-align: center;
+}
+
+.tarjeta-sesion-lectura h3 {
+    margin-bottom: 1.5rem;
+    color: #343a40;
+    font-weight: 700;
+}
+
+/* Cronómetro Grande */
+.contenedor-cronometro {
+    background-color: #fff0f3; /* Fondo rosado muy suave */
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    display: inline-block;
+    min-width: 280px;
+}
+
+.temporizador {
+    font-family: 'Courier New', monospace; /* Fuente tipo reloj digital */
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ff4d6d;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+}
+
+.btn-temporizador {
+    background-color: #ff758f;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 auto; /* Centrar botón */
+}
+
+.btn-temporizador:hover {
+    background-color: #ff4d6d;
+    transform: scale(1.05);
+}
+
+/* Input de Página Actual */
+.contenedor-actualizar-progreso {
+    margin-bottom: 2rem;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contenedor-actualizar-progreso label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+.contenedor-actualizar-progreso .input-group {
+    display: flex;
+    gap: 10px;
+}
+
+.contenedor-actualizar-progreso input {
+    flex: 1;
+    padding: 10px 15px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.contenedor-actualizar-progreso input:focus {
+    outline: none;
+    border-color: #ff758f;
+}
+
+.btn-actualizar {
+    background-color: #343a40; /* Negro/Gris oscuro para contraste */
+    color: white;
+    border: none;
+    padding: 0 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-actualizar:hover {
+    background-color: #212529;
+}
+
+/* Botón Finalizar */
+.btn-finalizar {
+    background-color: transparent;
+    color: #28a745; /* Verde para éxito */
+    border: 2px solid #28a745;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    width: 100%;
+}
+
+.btn-finalizar:hover {
+    background-color: #28a745;
+    color: white;
+}
+
+/* --- Responsive (Móvil) --- */
+@media (max-width: 768px) {
+    .libro-detalle-container {
+        padding: 1rem;
+    }
+
+    .encabezado-libro {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .portada-libro {
+        width: 140px;
+    }
+
+    .info-libro h1 {
+        font-size: 1.8rem;
+    }
+    
+    .estadisticas {
+        grid-template-columns: 1fr; /* Una columna en móvil */
+    }
+}

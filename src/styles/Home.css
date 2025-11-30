@@ -1,0 +1,177 @@
+/* --- HERO SECTION (Encabezado) --- */
+.hero-section {
+    position: relative;
+    padding: 8rem 0 6rem;
+    background: radial-gradient(circle at top right, #fff0f3 0%, #ffffff 60%);
+    overflow: hidden;
+}
+
+/* Círculo decorativo de fondo */
+.hero-circle {
+    position: absolute;
+    top: -10%;
+    right: -5%;
+    width: 600px;
+    height: 600px;
+    background: linear-gradient(135deg, rgba(255, 117, 143, 0.1), rgba(255, 77, 109, 0.05));
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+}
+
+.hero-badge {
+    display: inline-block;
+    background-color: #fff0f3;
+    color: var(--primary-color);
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ffccd5;
+}
+
+.display-title {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    background: -webkit-linear-gradient(45deg, #2b2d42, #ff758f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.lead-text {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+}
+
+/* Imagen Hero flotante */
+.hero-image-container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-img {
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(255, 77, 109, 0.2);
+    transform: rotate(2deg);
+    transition: transform 0.3s ease;
+}
+
+.hero-img:hover {
+    transform: rotate(0deg) scale(1.02);
+}
+
+/* --- SECCIÓN BENEFICIOS (Grid) --- */
+.section-benefits {
+    padding: 6rem 0;
+    background-color: var(--white);
+}
+
+.section-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 4rem;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.benefit-card {
+    background: #fff;
+    padding: 2.5rem;
+    border-radius: 24px;
+    border: 1px solid #f0f0f0;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.benefit-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 30px rgba(255, 117, 143, 0.1);
+    transform: translateY(-5px);
+}
+
+.icon-box {
+    width: 60px;
+    height: 60px;
+    background-color: #fff0f3;
+    color: var(--primary-color);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+/* --- SECCIÓN "POR QUÉ UNIRSE" (Estadísticas) --- */
+.section-why {
+    padding: 6rem 0;
+    background-color: #fff0f3;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+/* --- LLAMADA A LA ACCIÓN FINAL --- */
+.section-cta {
+    padding: 6rem 0;
+    text-align: center;
+}
+
+.cta-box {
+    background: linear-gradient(135deg, #ff758f 0%, #ff4d6d 100%);
+    border-radius: 30px;
+    padding: 4rem 2rem;
+    color: white;
+    box-shadow: 0 20px 40px rgba(255, 77, 109, 0.3);
+}
+
+.cta-box h2 {
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+.btn-light-cta {
+    background-color: white;
+    color: var(--primary-color);
+    padding: 12px 32px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.2s;
+}
+
+.btn-light-cta:hover {
+    transform: scale(1.05);
+    color: var(--primary-hover);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .display-title { font-size: 2.5rem; }
+    .hero-section { padding: 4rem 0; }
+    .cta-box { padding: 2rem 1rem; }
+}

@@ -1,0 +1,166 @@
+/* =========================================
+   VARIABLES Y ESTILOS GENERALES (PC)
+   ========================================= */
+:root {
+    --primary-color: #ff477e;
+    --secondary-color: #ffebf0;
+    --text-dark: #343a40;
+    --bg-color: #ffe5ec;
+    --shadow-lg: 0 20px 40px rgba(255, 71, 126, 0.15);
+}
+
+/* PC: Contenedor Principal */
+.layout-formulario-centrado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 80px);
+    background: var(--bg-color);
+    padding: 2rem;
+}
+
+/* PC: Tarjeta Blanca */
+.contenedor-formulario {
+    background: white;
+    width: 100%;
+    max-width: 900px;
+    border-radius: 24px;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    padding: 0;
+}
+
+/* PC: Columna Imagen */
+.columna-imagen {
+    background-color: #fff0f3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem !important;
+}
+
+.columna-imagen img {
+    width: 100%;
+    max-width: 250px;
+    filter: drop-shadow(0 10px 10px rgba(255, 117, 143, 0.3));
+    animation: flotar 6s ease-in-out infinite;
+}
+
+@keyframes flotar {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+/* PC: Columna Datos */
+.columna-datos {
+    padding: 3rem 4rem !important;
+}
+
+.columna-datos h1 {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    color: var(--text-dark);
+    font-weight: 700;
+}
+
+/* Inputs */
+.form-control {
+    background-color: #f8f9fa;
+    border: 2px solid transparent;
+    padding: 12px 15px;
+    border-radius: 12px;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.2s;
+}
+
+.form-control:focus {
+    background-color: white;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(255, 71, 126, 0.1);
+}
+
+/* Botón */
+.boton-formulario {
+    background: var(--primary-color);
+    border: none;
+    padding: 14px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    width: 100%;
+}
+
+.boton-formulario:hover {
+    transform: translateY(-2px);
+    background-color: #e6396b;
+}
+
+.columna-datos p { color: #6c757d; margin-top: 1.5rem; }
+.columna-datos a { color: var(--primary-color); font-weight: 600; text-decoration: none; }
+.columna-datos a:hover { text-decoration: underline; }
+
+/* =================================================================
+   🎯 RESPONSIVIDAD MÓVIL (SOLUCIÓN FINAL)
+   ================================================================= */
+@media (max-width: 768px) {
+
+    .layout-formulario-centrado {
+        background: white;
+        padding: 1rem;
+        
+        /* CLAVE ANTISCROLL:
+           Calculamos la altura total (100dvh) menos lo que mide el navbar (~80px).
+           Esto asegura que el formulario ocupe EXACTAMENTE el espacio restante.
+        */
+        min-height: calc(100dvh - 80px); 
+        
+        display: flex;
+        flex-direction: column;
+        /* Usamos margin: auto en el hijo, así que aquí alineamos normal */
+        justify-content: flex-start; 
+        padding-top: 0 !important;
+    }
+
+    /* La tarjeta se adapta */
+    .contenedor-formulario {
+        box-shadow: none;
+        border-radius: 0;
+        max-width: 100%;
+        /* ESTO ES LA MAGIA:
+           'margin: auto' empuja la tarjeta al centro si hay espacio de sobra.
+           Si la tarjeta es más alta que la pantalla (Registro largo), 
+           simplemente se queda arriba y permite scroll natural.
+        */
+        margin: auto 0; 
+    }
+
+    .columna-datos {
+        padding: 1rem 0.5rem !important;
+    }
+
+    .columna-datos h1 {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+
+    .columna-datos p {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+    
+    .form-control {
+        font-size: 16px;
+        padding: 14px;
+        background-color: #f0f2f5;
+    }
+    
+    .boton-formulario {
+        width: 100%;
+        padding: 16px;
+    }
+}

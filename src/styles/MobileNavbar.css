@@ -1,0 +1,69 @@
+.bottom-navbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70px; /* Altura cómoda para el dedo */
+    background: rgba(255, 255, 255, 0.95); /* Fondo semi-transparente */
+    backdrop-filter: blur(10px); /* Efecto vidrio esmerilado (iOS style) */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.05); /* Sombra hacia arriba */
+    z-index: 1000;
+    border-top: 1px solid rgba(0,0,0,0.02);
+    padding-bottom: env(safe-area-inset-bottom); /* Para iPhone X+ */
+}
+
+.bottom-nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #8d99ae; /* Color inactivo gris suave */
+    font-size: 0.7rem;
+    font-weight: 600;
+    width: 100%;
+    height: 100%;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.bottom-nav-link i {
+    font-size: 1.4rem;
+    margin-bottom: 2px;
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Estado Activo */
+.bottom-nav-link.active {
+    color: #ff758f; /* Color rosado principal */
+}
+
+.bottom-nav-link.active i {
+    transform: translateY(-2px); /* El icono sube un poquito */
+    filter: drop-shadow(0 4px 6px rgba(255, 117, 143, 0.3)); /* Brillo suave */
+}
+
+/* Pequeño punto indicador debajo del icono activo */
+.bottom-nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    width: 4px;
+    height: 4px;
+    background-color: #ff758f;
+    border-radius: 50%;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Efecto Ripple al tocar */
+.bottom-nav-link:active {
+    background-color: rgba(0,0,0,0.02);
+}

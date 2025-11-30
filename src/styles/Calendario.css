@@ -1,0 +1,224 @@
+/* Contenedor Padre: Ancho intermedio para llenar pantalla sin exagerar */
+.vista-calendario-wrapper {
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Tarjeta Blanca del Calendario */
+.contenedor-calendario {
+    background-color: #ffffff;
+    border-radius: 24px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+    border: 1px solid rgba(0,0,0,0.02);
+    height: 100%;
+}
+
+/* Encabezado (Mes y Flechas) */
+.encabezado-calendario {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.encabezado-calendario h2 {
+    font-size: 1.6rem;
+    color: #2b2d42;
+    margin: 0;
+    font-weight: 800;
+    text-transform: capitalize;
+    letter-spacing: -0.5px;
+}
+
+.encabezado-calendario button {
+    background: white;
+    border: 1px solid #e9ecef;
+    color: #2b2d42;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 1rem;
+}
+
+.encabezado-calendario button:hover {
+    background-color: #ff758f;
+    color: white;
+    border-color: #ff758f;
+    transform: translateY(-2px);
+}
+
+/* Cuadrícula de Días */
+.cuadricula-calendario {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* 7 columnas iguales */
+    gap: 10px;
+    text-align: center;
+}
+
+.dia-semana {
+    font-weight: 700;
+    color: #8d99ae;
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Estilo de cada día */
+.calendar-day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #2b2d42;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: transparent;
+    
+    /* En Desktop usamos tamaño fijo para elegancia */
+    height: 55px; 
+    width: 55px;
+    margin: 0 auto;
+}
+
+.calendar-day:hover:not(.other-month) {
+    background-color: #fff0f3;
+    color: #ff758f;
+    transform: scale(1.1);
+}
+
+.calendar-day.other-month {
+    color: #e9ecef;
+    pointer-events: none;
+}
+
+.calendar-day.today {
+    border: 2px solid #ff758f;
+    color: #ff758f;
+    font-weight: 800;
+}
+
+.calendar-day.selected {
+    background: linear-gradient(135deg, #ff758f 0%, #ff4d6d 100%) !important;
+    color: white !important;
+    box-shadow: 0 6px 15px rgba(255, 117, 143, 0.35);
+    border: none;
+    transform: scale(1.05);
+}
+
+/* Puntito indicador de evento */
+.event-dot {
+    width: 5px;
+    height: 5px;
+    background-color: #ffb703;
+    border-radius: 50%;
+    margin-top: 4px;
+}
+
+/* --- Lista lateral de eventos --- */
+#lista-eventos {
+    background: white;
+    border-radius: 24px;
+    padding: 2rem;
+    height: 100%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+    border: 1px solid rgba(0,0,0,0.02);
+    display: flex;
+    flex-direction: column;
+}
+
+#lista-eventos h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    color: #2b2d42;
+    font-weight: 700;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+#detalles-evento {
+    flex: 1;
+}
+
+.event-item {
+    background-color: #fff5f7;
+    padding: 15px 18px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    border-left: 4px solid #ff758f;
+    font-size: 0.95rem;
+    color: #2b2d42;
+    transition: transform 0.2s;
+}
+
+.event-item:hover {
+    transform: translateX(5px);
+    background-color: #ffeef1;
+}
+
+/* =========================================
+   RESPONSIVE (MÓVIL) - La Solución
+   ========================================= */
+@media (max-width: 768px) {
+    .vista-calendario-wrapper {
+        padding: 1rem; /* Menos padding lateral */
+    }
+
+    .contenedor-calendario {
+        padding: 1.2rem; /* Tarjeta más compacta */
+        border-radius: 20px;
+    }
+
+    .encabezado-calendario {
+        margin-bottom: 1rem;
+    }
+
+    .encabezado-calendario h2 {
+        font-size: 1.3rem;
+    }
+
+    /* Ajuste crítico de la cuadrícula */
+    .cuadricula-calendario {
+        gap: 4px; /* Espacio mínimo entre días */
+    }
+
+    .calendar-day {
+        /* Quitamos tamaño fijo y usamos % o tamaño menor */
+        width: 100%; 
+        height: auto;
+        aspect-ratio: 1/1; /* Mantiene proporción cuadrada */
+        font-size: 0.9rem;
+        border-radius: 10px;
+        max-width: 45px; /* Tope para que no crezca infinito */
+    }
+
+    .dia-semana {
+        font-size: 0.7rem;
+        margin-bottom: 5px;
+    }
+
+    /* Ajuste de eventos en móvil */
+    #lista-eventos {
+        margin-top: 1.5rem;
+        padding: 1.5rem;
+        height: auto; /* Altura automática, no forzada */
+    }
+    
+    .event-dot {
+        width: 4px;
+        height: 4px;
+        margin-top: 2px;
+    }
+}
